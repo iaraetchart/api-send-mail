@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const resend = require('resend');
 const Resend = resend.Resend;
+const cors = require('cors');
 require('dotenv').config();
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => res.send('Express on Vercel!!'));
