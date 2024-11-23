@@ -17,8 +17,8 @@ app.post('/api/send-email', async (req, res) => {
 
   try {
     const data = {
-      from: 'no-reply@ramirezsandro.com',
-      to: 'ramirezsandro96@gmail.com',
+      from: process.env.FROM_EMAIL,
+      to: process.env.TO_EMAIL,
       subject: subject,
       text: `Mensaje de ${user_name}: ${message}`,
     };
